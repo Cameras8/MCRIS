@@ -94,6 +94,7 @@ pip install numpy
 python main.py
 ```
 访问 `http://localhost:9999` 使用Web界面进行图像检测
+![image](https://github.com/user-attachments/assets/c208c282-09e3-416a-bd91-30d5f8000e7c)
 
 #### 2. 命令行测试
 ```bash
