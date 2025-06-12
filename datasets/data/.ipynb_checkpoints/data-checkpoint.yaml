@@ -1,0 +1,8 @@
+train: /root/yolov11/datasets/data/bvn/images/train
+val: /root/yolov11/datasets/data/bvn/images/val
+test: /root/yolov11/datasets/data/bvn/images/val
+
+nc: 5
+names: ['broke', 'good', 'circle', 'lose', 'uncovered']
+
+#此处修改为你的路径和标签
