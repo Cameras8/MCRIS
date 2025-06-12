@@ -1,0 +1,63 @@
+如何将项目部署到Github仓库，个人经验总结（好记性不如烂笔头）
+
+一：安装Git
+1.下载Git
+https://git-scm.com/download/win
+
+2.安装，一路Next即可。终端输入git --version出现版本号说明安装成功
+
+3.配置Github账户
+git config --global user.name "your name"（你的github用户名）
+git config --global user.email "your email"（你的github注册邮箱）
+
+4.验证
+git config --global --list看到类似user.name=你的用户名user.email=你的邮箱@Gmail.com说明配置成功
+
+二：在Github上创建一个空仓库，点击右上角绿色按钮新建即可，为项目起个名字（建议命名为要部署的项目文件夹名称），其他通通先不选，点击下方绿色按钮即创建成功
+
+重点来了！
+三：上传项目到Github
+1.右键项目文件夹，找到Git Bash Here打开
+
+2.初始化仓库
+git init
+
+3.添加文件（注意有个空格和.）
+git add .
+
+4.提交文件
+git commit -m "first commit"
+
+5.修改命名分支为main
+git branch -M main
+
+6.关联远程仓库
+git remote add origin https://github.com/yourname/yourprojectname.git（就是刚刚创建的仓库的网址，后面加.git）
+若出现报错： remote origin already exists 
+执行git remote rm origin
+再执行git remote add origin https://github.com/yourname/yourprojectname.git（即第六步即可解决）
+git remote -v确认是否添加成功
+
+7.推送文件
+git push -u origin main（如果是master就将main改成master）
+若出现报错，尝试强推送git push -f origin main
+
+8.出现后面这个说明成功了Enumerating objects: 10, done.Counting objects: 100% (10/10), done.Compressing objects: 100% (7/7), done.Writing objects: 100% (10/10), 1.23 KiB | 1.23 MiB/s, done.Total 10 (delta 0), reused 0 (delta 0)To https://github.com/你的用户名/my-project.git * [new branch] main -> mainbranch 'main' set up to track 'origin/main'.
+
+9.打开自己的github仓库即可看到上传的项目
+
+常见报错：
+schannel: failed to receive handshake, SSL/TLS connection failed
+解决方法1.git config --global http.sslBackend schannel   2.出现推送git push https://github.com/yourname/yourprojectname.git -f
+
+“fatal: unable to access ‘https://github.com/.../.git‘: Recv failure Connection was rese
+解决方法：
+方法一:取消代理设置
+git config --global --unset http.proxy 
+git config --global --unset https.proxy
+方法二：设置系统代理（需要科学上网）
+1.修改网络代理端口为：7890
+2.git config --global http.proxy http://127.0.0.1:7890
+3.git config --global -l（检验是否成功）
+
+大佬教程：https://www.cnblogs.com/ljbguanli/p/18916988
