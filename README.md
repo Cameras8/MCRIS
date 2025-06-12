@@ -203,7 +203,7 @@ python export.py
 
 如有问题或建议，请通过以下方式联系：
 
-- 📧 Email: your-email@example.com
+- 📧 Email: GCameras77@Gmail.com/798957950@qq.com
 - 🐛 Issues: [GitHub Issues](https://github.com/your-username/MCRIS/issues)
 - 📖 Wiki: [项目文档](https://github.com/your-username/MCRIS/wiki)
 
